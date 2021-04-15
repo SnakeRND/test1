@@ -1,0 +1,12 @@
+<?php
+
+$array = [1, 1, 2, 3, 4, 4, 5, 71, 82, 82, 65];
+
+$count = 0;
+
+foreach($array as $k => $v) {
+    if ($k < count($array) && $v === $array[$k+1]){
+        $count++;
+    }
+}
+echo $count;
