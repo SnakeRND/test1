@@ -1,0 +1,14 @@
+<?php
+
+$a = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when a unknown printer took galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum';
+$link = 'http://news.html';
+
+$cutNews = mb_substr($a, 0, 180);
+$array = explode(" ", $cutNews);
+$x = array_pop($array);
+$y = array_pop($array);
+$str = implode(' ',$array);
+
+$b = $str . '<a href="' . $link . '">' . $y . ' '. $x .'... </a>';
+
+// Проблема - если строка обрезается с пробелом в концеЮ то в ссылку попадет только одно слово
